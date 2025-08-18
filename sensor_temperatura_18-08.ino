@@ -1,12 +1,12 @@
 #include <math.h>
 #include "AdafruitIO_WiFi.h"
 
-#define WIFI_SSID "iPhone de Ana Clara"
-#define WIFI_PASS "senha1905"
+#define WIFI_SSID "..."
+#define WIFI_PASS "..."
 
 // Autenticação Adafruit IO
-#define IO_USERNAME "anaborges"
-#define IO_KEY "Loading..."
+#define IO_USERNAME "..."
+#define IO_KEY "..."
 
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
