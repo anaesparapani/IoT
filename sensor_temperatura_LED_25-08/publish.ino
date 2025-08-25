@@ -42,4 +42,5 @@ void publicacao() {
   temperatura->save(temp_atual);
 
   temp_anterior = temp_atual;
+
 }
