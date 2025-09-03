@@ -1,12 +1,12 @@
 #include "AdafruitIO_WiFi.h"
 
 // ===== CONFIG REDE =====
-#define WIFI_SSID     ""
-#define WIFI_PASS     ""
+#define WIFI_SSID     "..."
+#define WIFI_PASS     "..."
 
 // ===== CONFIG ADAFRUIT IO =====
-#define IO_USERNAME   ""
-#define IO_KEY        ""
+#define IO_USERNAME   "..."
+#define IO_KEY        "..."
 
 // Cria conexão com Adafruit IO
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
@@ -64,4 +64,5 @@ void handleBotaoLed(AdafruitIO_Data *data) {
     Serial.println("LED DESLIGADO");
   }
 }
+
 
