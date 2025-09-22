@@ -14,6 +14,7 @@ AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
 //Definição dos Feeds
 AdafruitIO_Feed *botaoalarme = io.feed("botaoalarme");
+AdafruitIO_Feed *distanciaultrassom = io.feed("distanciaultrassom");
 
 // Variáveis de controle
 bool alarmeAtivo = false;
@@ -105,11 +106,17 @@ void loop() {
   Serial.println(distancia);
   Serial.println(" cm");
 
-  //ativação ou desativação do alarme
-  if(alarmeAtivo && distancia > 0 && distancia < LIMITE_DISTANCIA){
-    ativarAlerta();
+  if (distancia != 0) {
+    // só envia distancias válidas
+    distanciaultrassom->save(distancia);
   }
-  else{
+
+  //ativação ou desativação do alarme
+  if (alarmeAtivo && distancia > 0 && distancia < LIMITE_DISTANCIA) {
+    ativarAlerta();
+  } else {
     desligarAlerta();
   }
+
+  delay(3000);  // intervalo ideal para a Adafruit
 }
